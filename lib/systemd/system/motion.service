@@ -1,0 +1,12 @@
+[Unit]
+Description=Motion detection video capture daemon
+Documentation=man:motion(1)
+
+[Service]
+Type=simple
+User=motion
+Environment="LIBCAMERA_RPI_TUNING_FILE=/usr/share/libcamera/ipa/rpi/vc4/imx219_noir.json"
+ExecStart=/usr/bin/libcamerify /usr/bin/motion
+
+[Install]
+WantedBy=multi-user.target
